@@ -1,0 +1,166 @@
+@media (max-width: 600px) {
+	/* Navbar */
+
+	.mobile-nav {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		height: 100svh;
+		top: 0;
+		right: -100%;
+		justify-content: center;
+		align-items: center;
+		isolation: isolate;
+		transition: 250ms ease-in-out;
+		z-index: 90;
+
+		&.mobactive {
+			right: 0;
+			backdrop-filter: saturate(0%) blur(10px);
+		}
+
+		& .nav-link-mob {
+			text-decoration: none;
+			color: var(--text);
+			padding: 1.5rem;
+			font-size: 1.44rem;
+		}
+	}
+	.main-bg {
+		overflow-x: hidden;
+	}
+	.pc-nav {
+		display: none;
+	}
+
+	.barbtn {
+		position: fixed;
+		cursor: pointer;
+		top: 20px;
+		right: 20px;
+		z-index: 100;
+		width: 70px;
+		height: 70px;
+		border: 2px solid #ffffff95;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	span {
+		transition: 250ms ease-in-out;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	span.fancyDot {
+		width: 3px;
+		height: 3px;
+		background-color: white;
+		border-radius: 50%;
+	}
+
+	span.fatDot {
+		scale: 25;
+	}
+
+	/* About section */
+	.welcome-text h1 {
+		font-size: 2.5rem;
+	}
+
+	.about-separator {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: baseline;
+	}
+	.about-text-section {
+		padding-inline: 2rem !important;
+
+		& p {
+			padding-inline-start: 0.5rem;
+		}
+	}
+
+	.svg-wrapper-mobile {
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+	}
+
+	.svg-holder {
+		width: auto;
+		height: 300px;
+		display: flex;
+		justify-content: baseline;
+		align-items: center;
+		animation: svg-move linear forwards;
+		animation-timeline: scroll(root);
+		animation-range-start: 23%;
+		animation-range-end: 50%;
+	}
+
+	.svg-icons-mobile {
+		width: 20%;
+		flex-shrink: 0;
+
+		& img {
+			width: 100%;
+		}
+	}
+
+	.project-cards {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contact-wrapper {
+		width: 100%;
+		height: fit-content;
+		padding: 1rem;
+		& h1 {
+			padding-inline: 1rem;
+		}
+	}
+
+	.contact-form {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		border: none;
+	}
+
+	form {
+		border: none;
+		width: 100%;
+	}
+
+	.socials {
+		padding-block-end: 3rem;
+	}
+	.form-input {
+		display: flex;
+		flex-direction: column;
+	}
+
+	input.box,
+	textarea.box {
+		width: 100% !important;
+	}
+
+	input[type="submit"] {
+		margin: 0 auto;
+	}
+}
+
+@keyframes svg-move {
+	to {
+		transform: translateX(-140%);
+	}
+}

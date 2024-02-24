@@ -1,0 +1,145 @@
+.bubble {
+	width: var(--bub-w);
+	aspect-ratio: 1;
+	position: absolute;
+	box-shadow: inset 0 0 30px #fff;
+	border-radius: 50%;
+	z-index: -1;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 50% 100px;
+		transform: translateY(-50%);
+		width: calc(var(--bub-w) / 20);
+		aspect-ratio: 1;
+		background-color: #fff;
+		border-radius: 50%;
+		filter: blur(3px);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 50% 0 0 200px;
+		width: calc(var(--bub-w) / 20);
+		aspect-ratio: 1;
+		background-color: #ac5656;
+		border-radius: 50%;
+		filter: blur(4px);
+	}
+
+	& span {
+		position: absolute;
+		width: calc(var(--bub-w) - 30px);
+		aspect-ratio: 1;
+		z-index: -1;
+		border-radius: 50%;
+	}
+
+	& span:nth-child(1) {
+		inset: 10px;
+		border-left: 20px solid purple;
+		filter: blur(20px);
+		animation: col1 10s ease both infinite;
+	}
+	& span:nth-child(2) {
+		inset: 10px;
+		border-right: 20px solid #8385e0;
+		filter: blur(20px);
+		animation: col2 10s ease both infinite;
+	}
+	& span:nth-child(3) {
+		inset: 10px;
+		border-top: 20px solid #beaf24;
+		filter: blur(30px);
+		animation: col3 10s ease both infinite;
+	}
+	& span:nth-child(4) {
+		inset: 30px;
+		border-bottom: 20px solid #461c96;
+		filter: blur(30px);
+		animation: col4 10s ease both infinite;
+	}
+	& span:nth-child(5) {
+		inset: 50px;
+		width: calc(var(--bub-w) - 80px);
+		border-left: 20px solid #8870b6;
+		filter: blur(40px);
+		transform: rotate(7deg);
+		animation: col5 10s ease both infinite;
+	}
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes moving {
+	0%,
+	100% {
+		top: var(--top-p);
+		left: var(--left-p);
+	}
+	50% {
+		top: calc(var(--left-p) / 2);
+		left: calc(var(--top-p) / 1.5);
+	}
+}
+
+@keyframes bubbling {
+	0%,
+	40%,
+	100% {
+		scale: 1.01;
+	}
+	10%,
+	50%,
+	90% {
+		scale: 0.99;
+	}
+	20%,
+	60%,
+	80% {
+		scale: 1.02;
+	}
+	30%,
+	70% {
+		scale: 0.98;
+	}
+}
+
+@keyframes col1 {
+	50% {
+		border-left: 20px solid var(--random-color);
+	}
+}
+
+@keyframes col2 {
+	50% {
+		border-right: 20px solid var(--random-color);
+	}
+}
+
+@keyframes col3 {
+	50% {
+		border-top: 20px solid var(--random-color);
+	}
+}
+
+@keyframes col4 {
+	50% {
+		border-bottom: 20px solid var(--random-color);
+	}
+}
+
+@keyframes col5 {
+	50% {
+		border-left: 20px solid var(--random-color);
+	}
+}
